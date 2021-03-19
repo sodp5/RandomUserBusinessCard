@@ -1,7 +1,7 @@
 package com.munny.randomuserbusinesscard.di.activity
 
-import com.munny.randomuserbusinesscard.ui.MainActivity
-import com.munny.randomuserbusinesscard.ui.MainModule
+import com.munny.randomuserbusinesscard.ui.main.MainActivity
+import com.munny.randomuserbusinesscard.ui.main.MainModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

@@ -1,4 +1,4 @@
-package com.munny.randomuserbusinesscard.ui
+package com.munny.randomuserbusinesscard.ui.main
 
 import androidx.lifecycle.ViewModel
 import com.munny.randomuserbusinesscard.di.viewmodel.ViewModelKey
