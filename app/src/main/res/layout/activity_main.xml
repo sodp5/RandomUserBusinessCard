@@ -29,6 +29,16 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="16dp" />
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.mainState.loading}"
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
@@ -43,6 +53,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{vm.MainState.name}"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@id/tv_name"
@@ -63,6 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{vm.MainState.company}"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@id/tv_company"
@@ -83,6 +95,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{vm.MainState.country}"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@id/tv_country"
@@ -103,6 +116,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{vm.MainState.city}"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@id/tv_city"
@@ -123,6 +137,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{vm.mainState.phone}"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@id/tv_phone"
@@ -143,6 +158,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{vm.mainState.email}"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@id/tv_email"
@@ -153,6 +169,7 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_marginBottom="30dp"
+            android:onClick="@{() -> vm.requestRandomUser()}"
             android:text="새 유저 정보 받아오기"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"

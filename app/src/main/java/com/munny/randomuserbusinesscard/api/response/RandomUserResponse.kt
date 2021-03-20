@@ -1,5 +1,5 @@
 
-package com.munny.randomuserbusinesscard.api.model
+package com.munny.randomuserbusinesscard.api.response
 
 data class RandomUserResponse(
     val results: List<Result>

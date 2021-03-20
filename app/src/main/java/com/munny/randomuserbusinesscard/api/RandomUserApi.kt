@@ -1,6 +1,6 @@
 package com.munny.randomuserbusinesscard.api
 
-import com.munny.randomuserbusinesscard.api.model.RandomUserResponse
+import com.munny.randomuserbusinesscard.api.response.RandomUserResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 
