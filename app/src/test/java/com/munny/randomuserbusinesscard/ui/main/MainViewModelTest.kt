@@ -1,10 +1,8 @@
-package com.munny.randomuserbusinesscard.ui
+package com.munny.randomuserbusinesscard.ui.main
 
 import com.munny.randomuserbusinesscard.BaseTest
 import com.munny.randomuserbusinesscard.R
 import com.munny.randomuserbusinesscard.api.response.RandomUserResponse
-import com.munny.randomuserbusinesscard.ui.main.MainRepository
-import com.munny.randomuserbusinesscard.ui.main.MainViewModel
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import io.reactivex.Single
