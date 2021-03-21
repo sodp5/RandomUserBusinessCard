@@ -52,10 +52,12 @@ dependencies {
     implementation networkDependencies.values()
     implementation rxDependencies.values()
     implementation diDependencies.values()
+    implementation imageDependencies.values()
 
     testImplementation testDependencies.values()
 
     kapt diKaptDependencies.values()
+    kapt imageKaptDependencies.values()
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

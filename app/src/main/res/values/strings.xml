@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RandomUserBusinessCard</string>
+
+    <string name="business_card_location">%s %s</string>
 </resources>

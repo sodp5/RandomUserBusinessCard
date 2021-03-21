@@ -12,6 +12,7 @@ buildscript {
                 mockito_kotlin_version: '2.0.0',
                 dagger_version        : '2.33',
                 lifecycle_version     : '2.3.0',
+                glide_version         : '4.12.0'
         ]
 
         lifeCycleDependencies = [
@@ -46,6 +47,14 @@ buildscript {
         diKaptDependencies = [
                 dagger_kapt        : "com.google.dagger:dagger-compiler:$versions.dagger_version",
                 dagger_android_kapt: "com.google.dagger:dagger-android-processor:$versions.dagger_version"
+        ]
+
+        imageDependencies = [
+                glide_core: "com.github.bumptech.glide:glide:$versions.glide_version"
+        ]
+
+        imageKaptDependencies = [
+                glide_kapt: "com.github.bumptech.glide:compiler:$versions.glide_version"
         ]
     }
     repositories {

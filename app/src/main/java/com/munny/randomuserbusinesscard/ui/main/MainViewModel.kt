@@ -52,7 +52,8 @@ class MainViewModel @Inject constructor(
                             country = result.location.country,
                             city = result.location.city,
                             phone = result.phone,
-                            email = result.email
+                            email = result.email,
+                            imageUrl = result.picture.medium
                         )
                     )
                 }

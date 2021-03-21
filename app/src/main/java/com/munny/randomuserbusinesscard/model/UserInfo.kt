@@ -10,5 +10,6 @@ data class UserInfo(
     val country: String = "",
     val city: String = "",
     val phone: String = "",
-    val email: String = ""
+    val email: String = "",
+    val imageUrl: String? = null
 ) : Parcelable

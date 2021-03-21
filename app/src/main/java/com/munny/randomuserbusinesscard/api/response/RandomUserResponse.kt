@@ -8,7 +8,8 @@ data class RandomUserResponse(
         val name: Name,
         val location: Location,
         val email: String,
-        val phone: String
+        val phone: String,
+        val picture: Picture
     )
 
     data class Name(
@@ -22,5 +23,7 @@ data class RandomUserResponse(
         val country: String
     )
 
-
+    data class Picture(
+        val medium: String
+    )
 }
