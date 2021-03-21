@@ -20,7 +20,7 @@ open class Event<out T>(private val content: T) {
     fun peekContent(): T = content
 }
 
-fun<T> LiveData<Event<T>>.observeEvent(lifecycleOwner: LifecycleOwner, block: (T) -> Unit) {
+fun <T> LiveData<Event<T>>.observeEvent(lifecycleOwner: LifecycleOwner, block: (T) -> Unit) {
     observe(lifecycleOwner, Observer {
         it.getContentIfNotHandled()?.let(block)
     })

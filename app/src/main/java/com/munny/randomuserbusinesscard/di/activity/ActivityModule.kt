@@ -1,7 +1,6 @@
 package com.munny.randomuserbusinesscard.di.activity
 
 import com.munny.randomuserbusinesscard.ui.businesscard.BusinessCardActivity
-import com.munny.randomuserbusinesscard.ui.businesscard.BusinessCardModule
 import com.munny.randomuserbusinesscard.ui.main.MainActivity
 import com.munny.randomuserbusinesscard.ui.main.MainModule
 import dagger.Module
@@ -14,6 +13,6 @@ abstract class ActivityModule {
     abstract fun injectMainActivity(): MainActivity
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = [BusinessCardModule::class])
+    @ContributesAndroidInjector
     abstract fun injectBusinessCardActivity(): BusinessCardActivity
 }

@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.munny.randomuserbusinesscard.base.BaseViewModel
-import com.munny.randomuserbusinesscard.di.viewmodel.ViewModelFactory
 import com.munny.randomuserbusinesscard.model.UserInfo
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
@@ -14,7 +13,7 @@ import dagger.assisted.AssistedInject
 class BusinessCardViewModel @AssistedInject constructor(
     @Assisted userInfo: UserInfo
 ) : BaseViewModel() {
-    private val _businessCardState = MutableLiveData<BusinessCardState>(BusinessCardState(userInfo))
+    private val _businessCardState = MutableLiveData<BusinessCardState>()
     val businessCardState: LiveData<BusinessCardState>
         get() = _businessCardState
 
@@ -22,17 +21,24 @@ class BusinessCardViewModel @AssistedInject constructor(
         val userInfo: UserInfo
     )
 
+    init {
+        _businessCardState.value = BusinessCardState(userInfo)
+    }
+
     @AssistedFactory
     interface BusinessCardViewModelFactory {
         fun create(userInfo: UserInfo): BusinessCardViewModel
     }
+
     companion object {
-        fun getBusinessCardViewModelFactory(factory: BusinessCardViewModelFactory, userInfo: UserInfo) =
-            object : ViewModelProvider.Factory {
-                @Suppress("UNCHECKED_CAST")
-                override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                    return factory.create(userInfo) as T
-                }
+        fun getBusinessCardViewModelFactory(
+            factory: BusinessCardViewModelFactory,
+            userInfo: UserInfo
+        ) = object : ViewModelProvider.Factory {
+            @Suppress("UNCHECKED_CAST")
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+                return factory.create(userInfo) as T
             }
+        }
     }
 }

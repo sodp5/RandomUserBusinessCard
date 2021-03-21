@@ -13,8 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiModule {
     @Provides
     fun provideRandomUserApi(): RandomUserApi {
-        return getRetrofit(RandomUserApi.URL).create(
-            RandomUserApi::class.java)
+        return getRetrofit(RandomUserApi.URL).create(RandomUserApi::class.java)
     }
 
     private fun getRetrofit(url: String): Retrofit {

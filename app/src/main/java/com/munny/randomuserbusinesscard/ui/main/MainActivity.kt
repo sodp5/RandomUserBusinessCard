@@ -26,9 +26,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         vm.mainCommand.observeEvent(this) { command ->
             when (command) {
                 is CreateBusinessCard -> {
-                    startActivity(Intent(applicationContext, BusinessCardActivity::class.java).apply {
-                        putExtra(EXTRA_USER_INFO, command.userInfo)
-                    })
+                    startActivity(
+                        Intent(applicationContext, BusinessCardActivity::class.java).apply {
+                            putExtra(EXTRA_USER_INFO, command.userInfo)
+                        }
+                    )
                 }
                 MainViewModel.MainCommand.ShowRequestRandomUserToast -> {
                     val message = getString(R.string.main_request_random_user_toast)

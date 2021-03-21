@@ -1,4 +1,3 @@
-
 package com.munny.randomuserbusinesscard.api.response
 
 data class RandomUserResponse(
