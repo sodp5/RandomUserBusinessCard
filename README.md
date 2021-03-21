@@ -1,7 +1,7 @@
 # RandomUserBusinessCard
 RandomUser Api를 활용하는 간단한 예제
 
-사용한 라이브러리
+### 사용한 라이브러리
 * Retrofit2: 2.9.0
 * okhttp3: '4.9.0'
 * rxjava: '2.2.21'
@@ -12,4 +12,5 @@ RandomUser Api를 활용하는 간단한 예제
 * glide: '4.12.0'
 
 https://RandomUser.me/api 의 결과 데이터를 이용하여 명함을 보여주는 앱
+
 ![명함 앱 화면](https://user-images.githubusercontent.com/37904970/111918995-0a41a300-8acb-11eb-9ccc-40f31152a765.png)
