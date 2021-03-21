@@ -8,6 +8,7 @@ import com.munny.randomuserbusinesscard.base.BaseActivity
 import com.munny.randomuserbusinesscard.databinding.ActivityBusinessCardBinding
 import com.munny.randomuserbusinesscard.di.viewmodel.ViewModelFactory
 import com.munny.randomuserbusinesscard.model.UserInfo
+import com.munny.randomuserbusinesscard.ui.main.MainActivity.Companion.EXTRA_USER_INFO
 import javax.inject.Inject
 
 class BusinessCardActivity : BaseActivity<ActivityBusinessCardBinding>(
@@ -22,6 +23,6 @@ class BusinessCardActivity : BaseActivity<ActivityBusinessCardBinding>(
         super.onCreate(savedInstanceState)
         binding.vm = vm
 
-        vm.setUserInfo(intent.getParcelableExtra("userInfo") as UserInfo)
+        vm.setUserInfo(intent.getParcelableExtra(EXTRA_USER_INFO) as UserInfo)
     }
 }

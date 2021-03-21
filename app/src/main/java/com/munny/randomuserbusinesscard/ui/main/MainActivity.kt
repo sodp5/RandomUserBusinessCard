@@ -27,13 +27,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             when (command) {
                 is CreateBusinessCard -> {
                     startActivity(Intent(applicationContext, BusinessCardActivity::class.java).apply {
-                        putExtra("userInfo", command.userInfo)
+                        putExtra(EXTRA_USER_INFO, command.userInfo)
                     })
                 }
-                MainViewModel.MainCommand.ShowRequestBusinessCardToast -> {
-                    Toast.makeText(this, "유저를 먼저 불러와주세요.", Toast.LENGTH_SHORT).show()
+                MainViewModel.MainCommand.ShowRequestRandomUserToast -> {
+                    val message = getString(R.string.main_request_random_user_toast)
+                    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
+    }
+
+    companion object {
+        const val EXTRA_USER_INFO = "extra_user_info"
     }
 }

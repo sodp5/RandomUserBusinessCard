@@ -83,7 +83,8 @@
             android:layout_height="80dp"
             app:imageUrl="@{vm.businessCardState.userInfo.imageUrl}"
             app:layout_constraintBottom_toBottomOf="@id/tv_email"
-            app:layout_constraintEnd_toEndOf="@id/tv_company" />
+            app:layout_constraintEnd_toEndOf="@id/tv_company"
+            tools:background="#aaa" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

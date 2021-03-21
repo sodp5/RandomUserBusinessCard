@@ -27,7 +27,7 @@ class MainViewModel @Inject constructor(
 
     sealed class MainCommand {
         data class CreateBusinessCard(val userInfo: UserInfo) : MainCommand()
-        object ShowRequestBusinessCardToast : MainCommand()
+        object ShowRequestRandomUserToast : MainCommand()
     }
 
     fun requestRandomUser() {
@@ -64,6 +64,6 @@ class MainViewModel @Inject constructor(
     fun createBusinessCard() {
         _mainCommand.value = mainState.value?.let { state ->
             Event(MainCommand.CreateBusinessCard(state.userInfo))
-        } ?: Event(MainCommand.ShowRequestBusinessCardToast)
+        } ?: Event(MainCommand.ShowRequestRandomUserToast)
     }
 }
