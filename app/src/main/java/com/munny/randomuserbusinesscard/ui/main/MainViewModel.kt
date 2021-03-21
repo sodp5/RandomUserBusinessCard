@@ -21,7 +21,7 @@ class MainViewModel @Inject constructor(
         get() = _mainCommand
 
     data class MainState(
-        val userInfo: UserInfo = UserInfo(),
+        val userInfo: UserInfo? = null,
         val isLoading: Boolean = false
     )
 
@@ -30,13 +30,16 @@ class MainViewModel @Inject constructor(
         object ShowRequestRandomUserToast : MainCommand()
     }
 
+    init {
+        _mainState.value = MainState()
+    }
+
     fun requestRandomUser() {
         mainRepository.requestRandomUser()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .doOnSubscribe {
                 _mainState.value = mainState.value?.copy(isLoading = true)
-                    ?: MainState(isLoading = true)
             }
             .doAfterTerminate {
                 _mainState.value = mainState.value?.copy(
@@ -62,8 +65,8 @@ class MainViewModel @Inject constructor(
     }
 
     fun createBusinessCard() {
-        _mainCommand.value = mainState.value?.let { state ->
-            Event(MainCommand.CreateBusinessCard(state.userInfo))
+        _mainCommand.value = mainState.value?.userInfo?.let { userInfo ->
+            Event(MainCommand.CreateBusinessCard(userInfo))
         } ?: Event(MainCommand.ShowRequestRandomUserToast)
     }
 }
