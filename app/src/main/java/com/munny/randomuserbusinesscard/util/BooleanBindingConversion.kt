@@ -1,4 +1,4 @@
-package com.munny.randomuserbusinesscard
+package com.munny.randomuserbusinesscard.util
 
 import android.view.View
 import androidx.databinding.BindingConversion
