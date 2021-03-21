@@ -4,6 +4,7 @@ buildscript {
 
     ext {
         versions = [
+                archtest_version      : '2.1.0',
                 retrofit_version      : '2.9.0',
                 okhttp3_version       : '4.9.0',
                 rxjava_version        : '2.2.21',
@@ -35,6 +36,7 @@ buildscript {
         ]
 
         testDependencies = [
+                arch_test     : "androidx.arch.core:core-testing:$versions.archtest_version",
                 mockito_core  : "org.mockito:mockito-core:$versions.mockito_version",
                 mockito_kotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockito_kotlin_version"
         ]
