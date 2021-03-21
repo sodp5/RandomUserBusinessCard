@@ -8,8 +8,8 @@ import dagger.multibindings.IntoMap
 
 @Module
 abstract class BusinessCardModule {
-    @Binds
-    @IntoMap
-    @ViewModelKey(BusinessCardViewModel::class)
-    abstract fun bindBusinessCardViewModel(businessCardViewModel: BusinessCardViewModel): ViewModel
+//    @Binds
+//    @IntoMap
+//    @ViewModelKey(BusinessCardViewModel::class)
+//    abstract fun bindBusinessCardViewModel(businessCardViewModel: BusinessCardViewModel): ViewModel
 }
