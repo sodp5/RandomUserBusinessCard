@@ -1,6 +1,11 @@
 # RandomUserBusinessCard
 RandomUser Api를 활용하는 간단한 예제
 
+### 아키텍쳐
+
+![image](https://user-images.githubusercontent.com/37904970/111919119-9784f780-8acb-11eb-8238-9cff7df669c7.png)
+
+
 ### 사용한 라이브러리
 * Retrofit2: 2.9.0
 * okhttp3: '4.9.0'
