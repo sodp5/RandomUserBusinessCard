@@ -2,6 +2,7 @@ package com.munny.randomuserbusinesscard.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.munny.randomuserbusinesscard.R
 import com.munny.randomuserbusinesscard.base.BaseViewModel
 import com.munny.randomuserbusinesscard.model.UserInfo
 import com.munny.randomuserbusinesscard.util.Event
@@ -27,7 +28,7 @@ class MainViewModel @Inject constructor(
 
     sealed class MainCommand {
         data class CreateBusinessCard(val userInfo: UserInfo) : MainCommand()
-        object ShowRequestRandomUserToast : MainCommand()
+        data class ShowToast(val messageId: Int) : MainCommand()
     }
 
     init {
@@ -67,6 +68,6 @@ class MainViewModel @Inject constructor(
     fun createBusinessCard() {
         _mainCommand.value = mainState.value?.userInfo?.let { userInfo ->
             Event(MainCommand.CreateBusinessCard(userInfo))
-        } ?: Event(MainCommand.ShowRequestRandomUserToast)
+        } ?: Event(MainCommand.ShowToast(R.string.main_request_random_user_toast))
     }
 }

@@ -10,6 +10,7 @@ import com.munny.randomuserbusinesscard.base.BaseActivity
 import com.munny.randomuserbusinesscard.databinding.ActivityMainBinding
 import com.munny.randomuserbusinesscard.ui.businesscard.BusinessCardActivity
 import com.munny.randomuserbusinesscard.ui.main.MainViewModel.MainCommand.CreateBusinessCard
+import com.munny.randomuserbusinesscard.ui.main.MainViewModel.MainCommand.ShowToast
 import com.munny.randomuserbusinesscard.util.observeEvent
 import javax.inject.Inject
 
@@ -32,8 +33,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                         }
                     )
                 }
-                MainViewModel.MainCommand.ShowRequestRandomUserToast -> {
-                    val message = getString(R.string.main_request_random_user_toast)
+                is ShowToast -> {
+                    val message = getString(command.messageId)
                     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
                 }
             }

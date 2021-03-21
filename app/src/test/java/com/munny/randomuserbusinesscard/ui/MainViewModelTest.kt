@@ -1,6 +1,7 @@
 package com.munny.randomuserbusinesscard.ui
 
 import com.munny.randomuserbusinesscard.BaseTest
+import com.munny.randomuserbusinesscard.R
 import com.munny.randomuserbusinesscard.api.response.RandomUserResponse
 import com.munny.randomuserbusinesscard.ui.main.MainRepository
 import com.munny.randomuserbusinesscard.ui.main.MainViewModel
@@ -59,7 +60,13 @@ class MainViewModelTest : BaseTest() {
         assertEquals(vm.mainCommand.value?.peekContent(), null)
 
         vm.createBusinessCard()
-        assert(vm.mainCommand.value?.peekContent() is MainViewModel.MainCommand.ShowRequestRandomUserToast)
+
+        vm.mainCommand.value?.peekContent().let {
+            assertEquals(
+                (it as MainViewModel.MainCommand.ShowToast).messageId,
+                R.string.main_request_random_user_toast
+            )
+        }
 
         vm.requestRandomUser()
         vm.createBusinessCard()
